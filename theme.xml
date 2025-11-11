@@ -1,0 +1,8 @@
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+    <title>Garden Lawn &amp; Irrigation Finn theme</title> <!-- your theme's name -->
+    <parent>GardenLawn/Hyvatheme</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+    <sequence>
+        <theme>GardenLawn/Hyvatheme</theme>
+    </sequence>
+</theme>
