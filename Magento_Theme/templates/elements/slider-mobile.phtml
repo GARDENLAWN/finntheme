@@ -15,21 +15,21 @@ use Magento\Framework\View\Element\Template;
 $heroicons = $viewModels->require(HeroiconsOutline::class);
 
 $sliderShowArrows = $block->getShowArrows() !== null ? $block->getShowArrows() : "end";
-$sliderShowPager = $block->getShowPager() !== null ? (bool) $block->getShowPager() : true;
-$loadFirstEager = (bool) $block->getLoadFirstEager();
+$sliderShowPager = $block->getShowPager() !== null ? (bool)$block->getShowPager() : true;
+$loadFirstEager = (bool)$block->getLoadFirstEager();
 
 $pagerClasses = "hidden sm:flex gap-4 justify-center items-center mt-7 absolute w-full bottom-8";
 $markerClasses = "w-4 h-4 rounded-full shadow-md cursor-pointer ring-4 ring-transparent bg-white hover:bg-blue-600 transition aria-[current=true]:ring-white aria-[current=true]:bg-blue-600";
 
 $items = [
     [
-        'image_url' => 'https://pub.gardenlawn.pl/media/wysiwyg/banners/dealers/finn-mobile-1.webp',
-        'image_alt' => __('Sprzedaż hydrosiewników Finn'),
+        'image_url' => 'https://pub.gardenlawn.pl/media/wysiwyg/banners/dealers/finn-mobile-2.webp',
+        'image_alt' => __('Zostań dealerem Finn'),
         'url' => $block->getUrl('zostan-dealerem'),
     ],
     [
-        'image_url' => 'https://pub.gardenlawn.pl/media/wysiwyg/banners/dealers/finn-mobile-2.webp',
-        'image_alt' => __('Zostań dealerem Finn'),
+        'image_url' => 'https://pub.gardenlawn.pl/media/wysiwyg/banners/dealers/finn-mobile-1.webp',
+        'image_alt' => __('Sprzedaż hydrosiewników Finn'),
         'url' => $block->getUrl('zostan-dealerem'),
     ]
 ];
@@ -61,7 +61,8 @@ $items = [
                     disabled:opacity-30 hover:shadow-primary/30 focus:shadow-primary/30"
                 aria-label="<?= $escaper->escapeHtmlAttr(__('Go to Previous Slide')) ?>"
             >
-                <?= /** @noEscape */ $heroicons->arrowLeftHtml() ?>
+                <?= /** @noEscape */
+                $heroicons->arrowLeftHtml() ?>
             </button>
             <button
                 type="button"
@@ -71,15 +72,16 @@ $items = [
                     disabled:opacity-30 hover:shadow-primary/30 focus:shadow-primary/30"
                 aria-label="<?= $escaper->escapeHtmlAttr(__('Go to Next Slide')) ?>"
             >
-                <?= /** @noEscape */ $heroicons->arrowRightHtml() ?>
+                <?= /** @noEscape */
+                $heroicons->arrowRightHtml() ?>
             </button>
         </nav>
     <?php endif; ?>
     <div data-track class="snap relative grid grid-flow-col auto-cols-[100%] overflow-x-auto overscroll-x-contain">
         <?php foreach ($items as $index => $item): ?>
             <?php
-                $itemTextLarge = $item['text_large'] ?? '';
-                $itemTextSmall = $item['text_small'] ?? '';
+            $itemTextLarge = $item['text_large'] ?? '';
+            $itemTextSmall = $item['text_small'] ?? '';
             ?>
             <a href="<?= $escaper->escapeUrl($item['url']) ?>">
                 <figure class="shrink-0 grid *:row-start-1 *:col-start-1 w-full">
@@ -97,7 +99,8 @@ $items = [
                         <?php endif; ?>
                     >
                     <?php if ($itemTextSmall || $itemTextLarge): ?>
-                        <figcaption class="relative col-start-1 row-start-1 self-end px-6 pt-12 pb-20 sm:pb-24 bg-gradient-to-t from-gray-800/50 to-transparent text-white text-center uppercase">
+                        <figcaption
+                            class="relative col-start-1 row-start-1 self-end px-6 pt-12 pb-20 sm:pb-24 bg-gradient-to-t from-gray-800/50 to-transparent text-white text-center uppercase">
                             <?php if ($itemTextSmall): ?>
                                 <p class="text-base sm:text-xl sm:mb-3 last:mb-0 sm:leading-7 font-semibold drop-shadow-md">
                                     <?= $escaper->escapeHtml($itemTextSmall) ?>
